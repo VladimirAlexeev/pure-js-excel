@@ -1,5 +1,6 @@
 import { ExcelComponent } from './../../core/ExcelComponent'
 import { createTable } from './table.template';
+import { $ } from '../../core/dom'
 
 export class Table extends ExcelComponent {
   static className = 'excel__table';
@@ -10,7 +11,6 @@ export class Table extends ExcelComponent {
       listeners: ['click', 'mousedown', 'mousemove', 'mouseup']
     })
   }
-
 
   toHTML() {
     return createTable()
@@ -23,7 +23,21 @@ export class Table extends ExcelComponent {
   onMousedown(event) {
     //  event.target.getAttribute('data-resize')
      if (event.target.dataset.resize) {
-       console.log(123)
+       const $resizer = $(event.target)
+      //  const $parent = $resizer.$el.parentNode <-- bad implementation 
+      //  const $parent = $resizer.$el.closest('.column') <-- better but still bad
+       const $parent = $resizer.closest('[data-type="resizable"]')
+       const elementCoords = $parent.getCoords()
+
+       document.onmousemove = e => {
+        const delta = Math.floor(e.pageX - elementCoords.right) // round
+        const value = elementCoords.width + delta
+        $parent.$el.style.width = value + 'px'
+       }
+
+       document.onmouseup = () => {
+         document.onmousemove = null // clear event
+       }
      }
   }
 
