@@ -24,22 +24,29 @@ export class Table extends ExcelComponent {
     //  event.target.getAttribute('data-resize')
      if (event.target.dataset.resize) {
         const $resizer = $(event.target)
-      //  const $parent = $resizer.$el.parentNode <-- bad implementation 
-      //  const $parent = $resizer.$el.closest('.column') <-- better but still bad
+        //  const $parent = $resizer.$el.parentNode <-- bad implementation 
+        //  const $parent = $resizer.$el.closest('.column') <-- better but still bad
         const $parent = $resizer.closest('[data-type="resizable"]')
         const elementCoords = $parent.getCoords()
         const cells = this.$root.findAll(`[data-col="${$parent.data.col}"]`)
+        const type = $resizer.data.resize
 
         document.onmousemove = e => {
-          const delta = Math.floor(e.pageX - elementCoords.right) // round
-          const value = elementCoords.width + delta
-          $parent.$el.style.width = value + 'px'
-          cells.forEach(el => el.style.width = value + 'px')
+          if (type === 'col') {
+            const delta = Math.floor(e.pageX - elementCoords.right) // round
+            const value = elementCoords.width + delta
+            $parent.css({width: value + 'px' })
+            cells.forEach(el => el.style.width = value + 'px')
+          } else {
+            const delta = Math.floor(e.pageY - elementCoords.bottom) // round
+            const value = elementCoords.height + delta
+            $parent.css({height: value + 'px' })
+            cells.forEach(el => el.style.height = value + 'px')
+          }
         }
-
-       document.onmouseup = () => {
-          document.onmousemove = null // clear event
-       }
+        document.onmouseup = () => {
+            document.onmousemove = null // clear event
+        }
      }
   }
 

@@ -57,6 +57,20 @@ class Dom {
   findAll(selector) {
     return this.$el.querySelectorAll(selector)
   }
+
+  /**
+   * // Format example
+   * {
+   *  height: '30px',
+   *  width: '42px',
+   *  color: red
+   * }
+   */
+  css(styles = {}) {
+    Object.keys(styles).forEach(key => {
+      this.$el.style[key] = styles[key]
+    })
+  }
 }
 
 export function $(selector) {
