@@ -28,14 +28,13 @@ export class Table extends ExcelComponent {
       //  const $parent = $resizer.$el.closest('.column') <-- better but still bad
         const $parent = $resizer.closest('[data-type="resizable"]')
         const elementCoords = $parent.getCoords()
-        console.log($parent.data.col)
+        const cells = this.$root.findAll(`[data-col="${$parent.data.col}"]`)
 
         document.onmousemove = e => {
           const delta = Math.floor(e.pageX - elementCoords.right) // round
           const value = elementCoords.width + delta
           $parent.$el.style.width = value + 'px'
-          document.querySelectorAll(`[data-col="${$parent.data.col}"]`)
-            .forEach(el => el.style.width = value + 'px')
+          cells.forEach(el => el.style.width = value + 'px')
         }
 
        document.onmouseup = () => {
