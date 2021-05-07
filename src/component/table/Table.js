@@ -23,20 +23,23 @@ export class Table extends ExcelComponent {
   onMousedown(event) {
     //  event.target.getAttribute('data-resize')
      if (event.target.dataset.resize) {
-       const $resizer = $(event.target)
+        const $resizer = $(event.target)
       //  const $parent = $resizer.$el.parentNode <-- bad implementation 
       //  const $parent = $resizer.$el.closest('.column') <-- better but still bad
-       const $parent = $resizer.closest('[data-type="resizable"]')
-       const elementCoords = $parent.getCoords()
+        const $parent = $resizer.closest('[data-type="resizable"]')
+        const elementCoords = $parent.getCoords()
+        console.log($parent.data.col)
 
-       document.onmousemove = e => {
-        const delta = Math.floor(e.pageX - elementCoords.right) // round
-        const value = elementCoords.width + delta
-        $parent.$el.style.width = value + 'px'
-       }
+        document.onmousemove = e => {
+          const delta = Math.floor(e.pageX - elementCoords.right) // round
+          const value = elementCoords.width + delta
+          $parent.$el.style.width = value + 'px'
+          document.querySelectorAll(`[data-col="${$parent.data.col}"]`)
+            .forEach(el => el.style.width = value + 'px')
+        }
 
        document.onmouseup = () => {
-         document.onmousemove = null // clear event
+          document.onmousemove = null // clear event
        }
      }
   }
