@@ -1,6 +1,7 @@
 import { ExcelComponent } from './../../core/ExcelComponent'
 import { createTable } from './table.template';
-import { $ } from '../../core/dom'
+import { resizeHandler } from './table.resize';
+import { shouldResize } from './table.functions'
 
 export class Table extends ExcelComponent {
   static className = 'excel__table';
@@ -8,7 +9,7 @@ export class Table extends ExcelComponent {
   constructor($root) {
     super($root, {
       name: 'Table',
-      listeners: ['click', 'mousedown', 'mousemove', 'mouseup']
+      listeners: ['mousedown']
     })
   }
 
@@ -16,45 +17,10 @@ export class Table extends ExcelComponent {
     return createTable()
   }
 
-  onClick() {
-    console.log('onClick')
-  }
-
   onMousedown(event) {
     //  event.target.getAttribute('data-resize')
-     if (event.target.dataset.resize) {
-        const $resizer = $(event.target)
-        //  const $parent = $resizer.$el.parentNode <-- bad implementation 
-        //  const $parent = $resizer.$el.closest('.column') <-- better but still bad
-        const $parent = $resizer.closest('[data-type="resizable"]')
-        const elementCoords = $parent.getCoords()
-        const cells = this.$root.findAll(`[data-col="${$parent.data.col}"]`)
-        const type = $resizer.data.resize
-
-        document.onmousemove = e => {
-          if (type === 'col') {
-            const delta = Math.floor(e.pageX - elementCoords.right) // round
-            const value = elementCoords.width + delta
-            $parent.css({width: value + 'px' })
-            cells.forEach(el => el.style.width = value + 'px')
-          } else {
-            const delta = Math.floor(e.pageY - elementCoords.bottom) // round
-            const value = elementCoords.height + delta
-            $parent.css({height: value + 'px' })
-            cells.forEach(el => el.style.height = value + 'px')
-          }
-        }
-        document.onmouseup = () => {
-            document.onmousemove = null // clear event
-        }
+     if (shouldResize(event)) {
+        resizeHandler(this.$root, event)
      }
-  }
-
-  onMousemove() {
-    console.log('onMousemove')
-  }
-
-  onMouseup() {
-    console.log('onMouseup')
   }
 }
