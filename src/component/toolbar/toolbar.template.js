@@ -18,17 +18,17 @@ export function createToolbar(state) {
     {
       name: 'align_left',
       active: state['textAlign'] === 'left',
-      value: {textAlign: state['textAlign'] === 'left' ? 'left' : 'left'}
+      value: {textAlign: 'left'}
     },
     {
       name: 'align_center',
       active: state['textAlign'] === 'center',
-      value: {textAlign: state['textAlign'] === 'center' ? 'center' : 'center'}
+      value: {textAlign: 'center'}
     },
     {
       name: 'align_right',
       active: state['textAlign'] === 'right',
-      value: {textAlign: state['textAlign'] === 'right' ? 'right' : 'right'}
+      value: {textAlign: 'right'}
     },
     {
       name: 'bold',
