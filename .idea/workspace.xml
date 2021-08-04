@@ -23,18 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4416dad6-b889-4e0e-a1e2-6075a5f1a772" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/dashboard.functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/excel/Excel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/excel/Excel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/StoreSubscriber.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/StoreSubscriber.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/routes/ActiveRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/routes/ActiveRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/DashboardPages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DashboardPages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/routes/Router.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/store/createStore.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/js-only-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/js-only-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/createStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/store/createStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ExcelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExcelPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/initialState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/initialState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +69,14 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/core/store" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -105,9 +109,13 @@
       <screen x="0" y="23" width="1680" height="947" />
     </state>
     <state x="1078" y="384" key="#ESLint/0.23.1680.947@0.23.1680.947" timestamp="1626965089188" />
-    <state x="886" y="228" width="670" height="676" key="search.everywhere.popup" timestamp="1627922342181">
+    <state x="683" y="115" key="SettingsEditor" timestamp="1627924060124">
       <screen x="0" y="23" width="1680" height="947" />
     </state>
-    <state x="886" y="228" width="670" height="676" key="search.everywhere.popup/0.23.1680.947@0.23.1680.947" timestamp="1627922342181" />
+    <state x="683" y="115" key="SettingsEditor/0.23.1680.947@0.23.1680.947" timestamp="1627924060124" />
+    <state x="886" y="228" width="670" height="676" key="search.everywhere.popup" timestamp="1627923790535">
+      <screen x="0" y="23" width="1680" height="947" />
+    </state>
+    <state x="886" y="228" width="670" height="676" key="search.everywhere.popup/0.23.1680.947@0.23.1680.947" timestamp="1627923790535" />
   </component>
 </project>
